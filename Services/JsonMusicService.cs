@@ -36,6 +36,34 @@ namespace WebApplication1.Services
             JsonSerializer.Serialize<IEnumerable<MusicModel>>(
                 new Utf8JsonWriter(json, new JsonWriterOptions { Indented = true }), updateprojects);
         }
+        public void UpdateProject(MusicModel newproject)
+        {
+            var projects = GetProjects();
+            MusicModel query = projects.Single(x => x.id == newproject.id);
+            if (query != null)
+            {
+                var temp = projects.ToList();
+                temp[temp.IndexOf(query)] = newproject;
+                IEnumerable<MusicModel> updateprojects = temp.ToArray();
+                JsonWrite(updateprojects);
+            }
+
+        }
+        public void DeleteProject(int id)
+        {
+            var projects = GetProjects();
+            MusicModel query = projects.Single(x => x.id == id);
+            var temp = projects.ToList();
+            temp.Remove(query);
+            IEnumerable<MusicModel> updateprojects = temp.ToArray();
+            JsonWrite(updateprojects);
+        }
+        public void JsonWrite(IEnumerable<MusicModel> project)
+        {
+            using var json = File.Create(JsonFileName);
+            JsonSerializer.Serialize<IEnumerable<MusicModel>>(
+                new Utf8JsonWriter(json, new JsonWriterOptions { Indented = true }), project);
+        }
         public MusicModel GetProjectById(int id)
         {
             var projects = GetProjects();

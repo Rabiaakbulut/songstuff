@@ -23,12 +23,31 @@ namespace WebApplication1.Pages.Users
         }
         public IActionResult OnPostForm()
         {
-            JsonProjectService.AddProject(Music);
-            return RedirectToPage("/Index", new { Status = true }); ;
+            if (Music.id == 0)
+            {
+                JsonProjectService.AddProject(Music);
+                return RedirectToPage("/Index", new { Status = "AddSuccess" });
+            }
+            else
+            {
+                JsonProjectService.UpdateProject(Music);
+                return RedirectToPage("/Index", new { Status = "UpdateSuccess" });
+            }
         }
         public void OnPostGetProjectById()
         {
             Music = JsonProjectService.GetProjectById(Music.id);
+        }
+        public IActionResult OnPostDeleteByID()
+        {
+            if (Music.id != 0)
+            {
+                JsonProjectService.DeleteProject(Music.id);
+                return RedirectToPage("/Index", new { Status = "DeleteSuccess" });
+            }
+            else
+                return RedirectToPage("/Index", new { Status = "DeleteError" });
+
         }
 
     }

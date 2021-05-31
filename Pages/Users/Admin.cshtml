@@ -53,7 +53,7 @@
         </div>
         <div class="form-row">
             <div class="col-12">
-                <input  type="text" class="form-control mb-3" asp-for="Music.url" placeholder="url" />
+                <input type="text" class="form-control mb-3" asp-for="Music.url" placeholder="url" />
             </div>
         </div>
         <button type="submit" class="btn btn-primary" style=" background-color: darkgrey;
@@ -61,7 +61,14 @@
         border-radius: 100px;
         color: rgb(33, 37, 41);
         font-weight: bold;">
-            Müzik Ekle
+            Ekle/Günncelle
+        </button>
+        <button type="submit" class="btn btn-primary" asp-page-handler="DeleteByID" style=" background-color: darkgrey;
+        border: 2px solid white;
+        border-radius: 100px;
+        color: rgb(33, 37, 41);
+        font-weight: bold;">
+            Sil
         </button>
     </form>
 </div>

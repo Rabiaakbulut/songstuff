@@ -3,6 +3,30 @@
 @{
     ViewData["Title"] = "Ana Sayfa";
 }
+@if (Model.Status == "AddSuccess")
+{
+    <div class="alert alert-success" role="alert">
+        Ekleme Başarılı <i class="far fa-check-circle"></i>
+    </div>
+}
+else if (Model.Status == "DeleteError")
+{
+    <div class="alert alert-danger" role="alert">
+        Silme Başarısız <i class="far fa-times-circle"></i>
+    </div>
+}
+else if (Model.Status == "UpdateSuccess")
+{
+    <div class="alert alert-success" role="alert">
+        Güncelleme Başarılı <i class="far fa-check-circle"></i>
+    </div>
+}
+else if (Model.Status == "DeleteSuccess")
+{
+    <div class="alert alert-success" role="alert">
+        Silme Başarılı <i class="far fa-check-circle"></i>
+    </div>
+}
 <!---->
 <!DOCTYPE html>
 <html lang="en">
@@ -52,6 +76,14 @@
 <body>
     <script type="text/javascript">
         alert("GRUP10 apisini kullanarak grup üyelerinin adını çektik. About kısmında görebilirsiniz");
+
+        //json dosyasina ekleme güncelleme silme işlemlerini yaparken çıkan başarılı/başarısız uyarısının ekranda kalma süresi
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 2000);
+
     </script>
     <!--Navbar-->
     <div class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -299,6 +331,7 @@
                     yapabilecek hale getirmek istiyoruz.
                 </p>
                 <p><mark>Karşı Takım Üyeleri:  @Model.Extract2</mark></p>
+                <p>Proje kodlarına ulaşmak için <a href="https://github.com/Rabiaakbulut/songstuff" target="_blank">tıklayın</a></p>
             </div>
             <div class="col-6 ps-4">
                 <h3 class="contact">CONTACT US</h3>

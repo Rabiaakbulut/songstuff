@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
             JsonMusicService = jsonmusicservice;
         }
         [HttpGet]
-        public IEnumerable<MusicModel> Get(int id)
+        public IEnumerable<MusicModel> Get(int id)  // örn:  /api/Music?id=4
         {
             if (id != 0)
             {

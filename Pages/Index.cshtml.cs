@@ -34,6 +34,8 @@ namespace WebApplication1.Pages
         public string Extract { get; set; }
         [BindProperty]
         public string Extract2 { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string Status { get; set; }
 
 
         public void OnGet()
