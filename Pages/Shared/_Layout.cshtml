@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] songstuff</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- favicon -->
+    <link rel="icon" href="~/songstuff_favicon.ico" type="image/x-icon" />
+</head>
+<body>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿@page
+@model WebApplication1.Pages.Users.AdminModel
+@{
+}
+<style>
+    html {
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgb(33, 37, 41);
+    }
+
+    body {
+        background-color: rgb(33, 37, 41);
+    }
+
+    form {
+        background-color: rgb(33, 37, 41);
+        margin: 3%;
+    }
+</style>
+
+<div class="admin" style="background-color: rgb(33, 37, 41);">
+    <h1 style="color:white; margin:3%;">Müzik Formu</h1>
+
+    <form class="form-inline justify-conent-center mb-3" method="post" asp-page-handler="GetProjectById">
+        <input class="form-check-control" asp-for="Music.id" type="search" />
+        <button class="btn btn-primary ml-2" type="submit" style=" background-color: darkgrey;
+        border: 2px solid white;
+        color: rgb(33, 37, 41);
+        font-weight: bold;">
+            Ara
+        </button>
+    </form>
+    <form method="post" asp-page-handler="Form">
+        <div class="form-row">
+            <div class="col-2">
+                <input type="text" class="form-control mb-3" asp-for="Music.id" placeholder="json id" readonly />
+            </div>
+            <div class="col-2">
+                <input type="text" class="form-control mb-3" asp-for="Music.category" placeholder="category" />
+            </div>
+            <div class="col-2">
+                <input type="text" class="form-control mb-3" asp-for="Music.genre" placeholder="genre" />
+            </div>
+            <div class="col-2">
+                <input type="text" class="form-control mb-3" asp-for="Music.feeling" placeholder="feeling" />
+            </div>
+            <div class="col-2">
+                <input type="text" class="form-control mb-3" asp-for="Music.energy" placeholder="energy" />
+            </div>
+            <div class="col-2">
+                <input type="text" class="form-control mb-3" asp-for="Music.duration" placeholder="duration" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-12">
+                <input  type="text" class="form-control mb-3" asp-for="Music.url" placeholder="url" />
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style=" background-color: darkgrey;
+        border: 2px solid white;
+        border-radius: 100px;
+        color: rgb(33, 37, 41);
+        font-weight: bold;">
+            Müzik Ekle
+        </button>
+    </form>
+</div>
+
+@*<form asp-page-handler="Form">
+    <input id="videourl" type="text" style="width:400px;" onchange="newVideo()" />
+
+    <iframe id="myIframe" width="230" height="129" src="$videourl" frameborder="0" allowfullscreen></iframe>
+</form>
+    <script type="text/javascript">
+        function newVideo() {
+            var select = document.getElementById('videourl').value;
+            document.getElementById('myIframe').src = select;
+        }
+    </script>*@

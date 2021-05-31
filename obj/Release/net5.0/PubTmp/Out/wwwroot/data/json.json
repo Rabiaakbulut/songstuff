@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "MUSIC",
+    "genre": "POP",
+    "feeling": "SAD",
+    "energy": "LOW",
+    "duration": "0-2 MIN.",
+    "url": "https://www.youtube.com/embed/1nydxbGhgv8"
+  },
+  {
+    "id": 2,
+    "category": "MUSIC",
+    "genre": "ROCK",
+    "feeling": "HAPPY",
+    "energy": "LOW",
+    "duration": "2-4 MIN.",
+    "url": "https://www.youtube.com/embed/fHI8X4OXluQ"
+  },
+  {
+    "id": 3,
+    "category": "MUSIC",
+    "genre": "POP",
+    "feeling": "SAD",
+    "energy": "UP",
+    "duration": "0-2 MIN.",
+    "url": "https://www.youtube.com/embed/XXYlFuWEuKI"
+  },
+  {
+    "id": 4,
+    "category": "MUSIC",
+    "genre": "ROCK",
+    "feeling": "HAPPY",
+    "energy": "UP",
+    "duration": "0-2 MIN.",
+    "url": "https://www.youtube.com/embed/zznlf3ZKQi0"
+  }
+]

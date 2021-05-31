@@ -1,0 +1,54 @@
+﻿@page
+@model WebApplication1.Pages.Uyelik1Model
+@{
+}
+<style>
+    html {
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgb(33, 37, 41);
+    }
+    body {
+        background-color: rgb(33, 37, 41);
+    }
+    form {
+        background-color: rgb(33, 37, 41);
+        padding: 30px;
+        margin: 10px;
+        margin-top: 3%;
+    }
+</style>
+<div class="signup" style="background-color: rgb(33, 37, 41);">
+    <h1 style="color:white; margin:3%;">Üyelik Formu</h1>
+    <form method="post">
+        <div class="form-row mb-3">
+            <div class="col">
+                <input type="text" class="form-control" asp-for="Kullanici.Ad" placeholder="Ad" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" asp-for="Kullanici.Soyad" placeholder="Soyad" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" asp-for="Kullanici.Email" placeholder="Email" />
+            </div>
+        </div>
+        <div class="form-row mb-3">
+            <div class="col">
+                <input type="text" class="form-control" asp-for="Kullanici.Adres.Ulke" placeholder="Ulke" required />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" asp-for="Kullanici.Adres.Il" placeholder="Il" required />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" asp-for="Kullanici.Adres.PostaKodu" placeholder="Posta Kodu" />
+            </div>
+            <div class="col col-12 mt-3">
+                <input type="text" class="form-control" asp-for="Kullanici.Adres.AdresBilgisi" placeholder="Adres Bilgisi" />
+            </div>
+        </div>
+        <input type="submit" class="btn btn-info" value="Kayıt Ol" style=" background-color: darkgrey;
+        border: 2px solid white;
+        border-radius: 100px;
+        color: rgb(33, 37, 41);
+        font-weight: bold;">
+    </form>
+</div>
