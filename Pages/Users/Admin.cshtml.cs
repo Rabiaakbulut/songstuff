@@ -18,6 +18,8 @@ namespace WebApplication1.Pages.Users
         }
         [BindProperty]
         public MusicModel Music { get; set; }
+        [BindProperty]
+        public string link { get; set; }
         public void OnGet()
         {
         }
@@ -37,6 +39,12 @@ namespace WebApplication1.Pages.Users
         public void OnPostGetProjectById()
         {
             Music = JsonProjectService.GetProjectById(Music.id);
+            if (Music!=null) 
+                link = Music.url;
+            else //aranan id ye kayýtlý bir müzik yoksa linki boþ býrak admin.cshtml de iframeyi gizle
+                link = "";
+            
+            
         }
         public IActionResult OnPostDeleteByID()
         {
