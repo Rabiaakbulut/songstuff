@@ -1,0 +1,33 @@
+﻿@page
+@model WebApplication1.Pages.AdminModel
+@{
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+@*https://wallpapercave.com/wp/wp2758170.gif  yeşil doğa
+    https://wallpapercave.com/wp/wp2763910.gif  mavi doğa
+    https://wallpapercave.com/wp/wp2729921.gif   renkli şerit
+*@
+
+<style>
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-image: url('https://wallpapercave.com/wp/wp2763910.gif'); 
+    background-size: cover; }
+</style>
+
+<form method="post" asp-page-handler="Form" style="margin:10% 30%;">
+    <div class="container">
+        <h2 style="color:white;">Admin Panel</h2>
+        <input type="text" class="form-control mb-3" asp-for="KullanıcıAdı" placeholder="Username" />
+        <input type="text" class="form-control mb-3" asp-for="Şifre" placeholder="Password" />
+        <button type="submit" style=" background-color: darkgrey;
+        border: 2px solid white;
+        border-radius: 100px;
+        color: rgb(33, 37, 41);
+        font-weight: bold;">
+            Login
+        </button>
+    </div>
+</form>
+
